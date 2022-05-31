@@ -5,9 +5,9 @@
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![array-reverse](./assets/array-reverse.jpg)
+![array-reverse](./array-reverse.jpg)
 
-[array reverse image](./assets/array-reverse.jpg)
+[array reverse image](./array-reverse.jpg)
 
 #### PR
 
