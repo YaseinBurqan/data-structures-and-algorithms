@@ -71,3 +71,5 @@ Create a Node class that has properties for the `value` stored in the Node, and 
     -  .include() :Check all the values to return true if the value `exist` or return false if it is not `exist`.
 
     - .toString() : check all the values and add them to the output of the linked list.
+
+## [The Code](../linked-list/)
