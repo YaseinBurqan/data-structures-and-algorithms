@@ -62,7 +62,7 @@ Create a Node class that has properties for the `value` stored in the Node, and 
 
     - toString(): return a string of all the linked list shape.
 
-### How we can use them ?
+### How we can use the API ?
 
     - To create an empty linked list : const = new LinkedList()
 
