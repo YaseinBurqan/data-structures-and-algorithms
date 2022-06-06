@@ -2,8 +2,8 @@
 /* eslint-disable new-cap */
 "use strict";
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let value = 10;
+let arr = [4, 8, 15, 16, 23, 42];
+let value = 15;
 
 let BinarySearch = function (arr, value, start, end) {
   if (start > end) return false;
@@ -22,5 +22,5 @@ let BinarySearch = function (arr, value, start, end) {
 if (BinarySearch(arr, value, 0, arr.length - 1)) {
   console.log("Element found : " + value);
 } else {
-  console.log("Element not found");
+  console.log("Element not found : -1");
 }
