@@ -19,3 +19,4 @@ This page can keep track of my observations and questions from the challenge ass
 | array insert shift | [array insert shift](./array-insert-shift/README.MD) |
 | Linked List | [Linked List](./linked-list/README.md) |
 | array binary search | [array-binary-search](./array-binary-search/README.md) |
+| linked list insertions | [linked-list-insertions](./linked-list-insertions/README.md) |
