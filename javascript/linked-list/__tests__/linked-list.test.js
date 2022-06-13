@@ -64,13 +64,9 @@ test("Will return false when searching for a value in the linked list that does 
 
 test("Can properly return a collection of all the values that exist in the linked list", () => {
   const ll = new LinkedList();
-  //ll.insert("e");
   ll.insert("c");
   ll.insert("b");
   ll.insert("a");
 
   expect(ll.toString()).toEqual("{ a } -> { b } -> { c } -> NULL");
-  // expect(ll.toString()).toEqual(
-  //   "{ a } -> { b } -> { c } -> { e } -> NULL"
-  // );
 });
