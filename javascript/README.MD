@@ -20,3 +20,4 @@ This page can keep track of my observations and questions from the challenge ass
 | Linked List | [Linked List](./linked-list/README.md) |
 | array binary search | [array-binary-search](./array-binary-search/README.md) |
 | linked list insertions | [linked-list-insertions](./linked-list-insertions/README.md) |
+| linked list kth | [linked-list-kth](./linked-list-kth/README.md) |
