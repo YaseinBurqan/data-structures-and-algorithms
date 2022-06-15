@@ -10,11 +10,11 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-Understand the problem
-Imagined how the results should be
-Make a drawings of how the linked list would be after insertion of multiple nodes Linked-List.
-Write the code
-Create the tests
+- Understand the problem
+- Imagined how the results should be
+- Make a drawings of how the linked list would be after insertion of multiple nodes Linked-List.
+- Write the code
+- Create the tests
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
