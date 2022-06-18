@@ -21,3 +21,4 @@ This page can keep track of my observations and questions from the challenge ass
 | array binary search | [array-binary-search](./array-binary-search/README.md) |
 | linked list insertions | [linked-list-insertions](./linked-list-insertions/README.md) |
 | linked list kth | [linked-list-kth](./linked-list-kth/README.md) |
+| linked list zip | [linked-list-zip](./linked-list-zip/README.md) |
