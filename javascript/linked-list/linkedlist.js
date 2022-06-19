@@ -193,27 +193,6 @@ class LinkedList {
     } else {
       return false;
     }
-
-    // let current1 = list,
-    //   current2 = list,
-    //   prev;
-
-    // while (current2 && current2.next) {
-    //   (current1 = current1.next), (current2 = current2.next.next);
-    //   (prev = current1), (current1 = current1.next), (prev.next = null);
-    // }
-
-    // while (current1) {
-    //   (prev = current1), (current2 = list), (current1 = prev);
-
-    //   if (current2.val !== current1.val) {
-    //     return false;
-    //   } else {
-    //     (current2 = current2.next), (current1 = current1.next);
-    //     return true;
-    //   }
-    // }
-    // return false;
   }
 }
 
