@@ -1,8 +1,8 @@
-'use strict';
+/* eslint-disable no-unused-vars */
+"use strict";
 
 // Require the linked list implementation
-const LinkedList = require('../../linked-list');
-
+const LinkedList = require("../../linked-list/linkedlist");
 
 /*
   Accept a linked list
@@ -10,7 +10,5 @@ const LinkedList = require('../../linked-list');
   Return it
 */
 module.exports = function reverse(list) {
-
   return true;
-
 };

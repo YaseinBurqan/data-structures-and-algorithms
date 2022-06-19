@@ -74,3 +74,13 @@ Create a Node class that has properties for the `value` stored in the Node, and 
     - .toString() : check all the values and add them to the output of the linked list.
 
 ## [The Code](../linked-list/)
+
+![Append](./assets/append.jpg)
+
+![insertBefore](./assets/insertBefore.jpg)
+
+![insertAfter](./assets/insertAfter.jpg)
+
+![linked list kth](./assets/linked-list-kth.jpg)
+
+![linked list zip](./assets/linked-list-zip.jpg)
