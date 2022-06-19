@@ -26,12 +26,12 @@ class LinkedList {
   includes(value) {
     try {
       let valueResult = false;
-      let currentNode = this.head;
-      while (currentNode) {
-        if (currentNode.value === value) {
+      let current = this.head;
+      while (current) {
+        if (current.value === value) {
           return true;
         }
-        currentNode = currentNode.next;
+        current = current.next;
       }
       return valueResult;
     } catch (e) {
@@ -41,12 +41,12 @@ class LinkedList {
 
   toString() {
     try {
-      let currentNode = this.head;
+      let current = this.head;
       let string = "";
 
-      while (currentNode) {
-        string = string + `{ ${currentNode.value} } -> `;
-        currentNode = currentNode.next;
+      while (current) {
+        string = string + `{ ${current.value} } -> `;
+        current = current.next;
       }
       string += `NULL`;
       return string;
@@ -85,35 +85,35 @@ class LinkedList {
   }
 
   insertBefore(value, newValue) {
-    let newNode = this.head;
+    let current = this.head;
     const node = new Node(newValue);
 
-    if (newNode.value === value) {
+    if (current.value === value) {
       node.next = this.head;
       this.head = node;
     } else {
-      while (newNode.next) {
-        if (newNode.next.value === value) {
-          node.next = newNode.next;
-          newNode.next = node;
+      while (current.next) {
+        if (current.next.value === value) {
+          node.next = current.next;
+          current.next = node;
           break;
         } else {
-          newNode = newNode.next;
+          current = current.next;
         }
       }
     }
   }
 
   insertAfter(value, newValue) {
-    let newNode = this.head;
+    let current = this.head;
     const node = new Node(newValue);
-    while (newNode) {
-      if (newNode.value === value) {
-        node.next = newNode.next;
-        newNode.next = node;
+    while (current) {
+      if (current.value === value) {
+        node.next = current.next;
+        current.next = node;
         break;
       }
-      newNode = newNode.next;
+      current = current.next;
     }
   }
 
@@ -158,6 +158,62 @@ class LinkedList {
       current2 = current2.next;
     }
     return list1;
+  }
+
+  isPalindrome(list) {
+    let current1 = list.head;
+    let current2 = list.head;
+
+    // Initialize result
+    let result = true;
+
+    // Initialize array
+    let arr = [];
+    // a stack in JS is an array.
+    if (list !== null && list.next !== null) {
+      //
+      // push all elements of l into the stack.
+      while (current1) {
+        arr.push(current1.value);
+        current1 = current1.next;
+      }
+      // Traverse the list again & check by popping from the stack:
+      while (current2) {
+        // get the top most element on the stack:
+        let newVal = arr.pop();
+        // check if the node data isn't the same as the element popped:
+        if (newVal !== current2.value) {
+          result = false;
+          break;
+        }
+        // move ahead:
+        current2 = current2.next;
+      }
+      return result;
+    } else {
+      return false;
+    }
+
+    // let current1 = list,
+    //   current2 = list,
+    //   prev;
+
+    // while (current2 && current2.next) {
+    //   (current1 = current1.next), (current2 = current2.next.next);
+    //   (prev = current1), (current1 = current1.next), (prev.next = null);
+    // }
+
+    // while (current1) {
+    //   (prev = current1), (current2 = list), (current1 = prev);
+
+    //   if (current2.val !== current1.val) {
+    //     return false;
+    //   } else {
+    //     (current2 = current2.next), (current1 = current1.next);
+    //     return true;
+    //   }
+    // }
+    // return false;
   }
 }
 
