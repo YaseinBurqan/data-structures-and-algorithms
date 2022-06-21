@@ -134,32 +134,32 @@ describe("Linked List", () => {
     expect(ll.head.next.next.next.next).toBeNull();
   });
 
-  it("Where k is greater than the length of the linked list", () => {
+  test("Where k is greater than the length of the linked list", () => {
     const ll = new LinkedList();
     ll.append("a");
     expect(ll.kthFormEnd(2)).toEqual("Exception");
   });
 
-  it("Where k and the length of the list are the same", () => {
+  test("Where k and the length of the list are the same", () => {
     const ll = new LinkedList();
     ll.append("a");
     ll.append("b");
     expect(ll.kthFormEnd(1)).toEqual("a");
   });
 
-  it("Where k is not a positive integer", () => {
+  test("Where k is not a positive integer", () => {
     const ll = new LinkedList();
     ll.append("a");
     expect(ll.kthFormEnd(-1)).toEqual("Exception");
   });
 
-  it("Where the linked list is of a size 1", () => {
+  test("Where the linked list is of a size 1", () => {
     const ll = new LinkedList();
     ll.append("a");
     expect(ll.kthFormEnd(0)).toEqual("a");
   });
 
-  it("Happy Path” where k is not at the end, but somewhere in the middle of the linked list", () => {
+  test("Happy Path” where k is not at the end, but somewhere in the middle of the linked list", () => {
     const ll = new LinkedList();
     ll.append("a");
     ll.append("b");
@@ -169,7 +169,9 @@ describe("Linked List", () => {
     expect(ll.kthFormEnd(3)).toEqual("b");
   });
 
-  it("zipLists method -test1", () => {
+  // //---------------------------------
+
+  test("zipLists method -test1", () => {
     const ll1 = new LinkedList();
     const ll2 = new LinkedList();
     let ll = new LinkedList();
@@ -185,7 +187,7 @@ describe("Linked List", () => {
     );
   });
 
-  it("zipLists method -test2", () => {
+  test("zipLists method -test2", () => {
     const ll1 = new LinkedList();
     const ll2 = new LinkedList();
     let ll = new LinkedList();
@@ -200,7 +202,7 @@ describe("Linked List", () => {
     );
   });
 
-  it("zipLists method -test3", () => {
+  test("zipLists method -test3", () => {
     const ll1 = new LinkedList();
     const ll2 = new LinkedList();
     let ll = new LinkedList();
@@ -213,5 +215,41 @@ describe("Linked List", () => {
     expect(ll.toString()).toEqual(
       "{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> NULL"
     );
+  });
+
+  //-----------------------
+
+  test("isPalindrome method -test1", () => {
+    const ll1 = new LinkedList();
+    ll1.append("t");
+    ll1.append("a");
+    ll1.append("c");
+    ll1.append("o");
+    ll1.append("c");
+    ll1.append("a");
+    ll1.append("t");
+    let result = ll1.isPalindrome(ll1);
+    expect(result).toEqual(true);
+  });
+
+  test("isPalindrome method -test2", () => {
+    const ll1 = new LinkedList();
+    ll1.append("m");
+    ll1.append("o");
+    ll1.append("o");
+    ll1.append("m");
+    let result = ll1.isPalindrome(ll1);
+    expect(result).toEqual(true);
+  });
+
+  test("isPalindrome method -test3", () => {
+    const ll1 = new LinkedList();
+    ll1.append("h");
+    ll1.append("o");
+    ll1.append("u");
+    ll1.append("s");
+    ll1.append("e");
+    let result = ll1.isPalindrome(ll1);
+    expect(result).toEqual(false);
   });
 });

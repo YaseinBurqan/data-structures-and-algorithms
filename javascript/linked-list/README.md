@@ -84,3 +84,5 @@ Create a Node class that has properties for the `value` stored in the Node, and 
 ![linked list kth](./assets/linked-list-kth.jpg)
 
 ![linked list zip](./assets/linked-list-zip.jpg)
+
+![linked list isPalindrome](./assets/isPalindrome.jpg)
