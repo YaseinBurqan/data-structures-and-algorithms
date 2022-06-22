@@ -1,4 +1,4 @@
-# Singly Linked List
+# stack & queue
 
 Create a Stack and Queue classes with some specs
 

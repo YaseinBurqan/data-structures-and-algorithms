@@ -19,4 +19,5 @@ This page can keep track of my observations and questions from the challenge ass
 | array insert shift | [array insert shift](./array-insert-shift/README.MD) |
 | array binary search | [array-binary-search](./array-binary-search/README.md) |
 | Linked List | [Linked List](./linked-list/README.md) |
-| stack-and-queue | [stack-and-queue](./stack-and-queue/README.md) |
+| stack and queue | [stack-and-queue](./stack-and-queue/README.md) |
+| Pseudo Queue | [PseudoQueue](./stack-and-queue/pseudo-queue.md) |
