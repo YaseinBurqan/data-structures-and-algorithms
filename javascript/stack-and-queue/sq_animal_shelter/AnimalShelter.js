@@ -7,14 +7,14 @@ const Queue = require("../stack_queue/src/queue");
 class AnimalShelter {
   constructor() {
     // initialize this.dog or this.cat to the Queue to call the Queue class methods
-    this.queue = new Queue();
+    this.dogCat = new Queue();
   }
 
   // insert the animal in the Queue
   enqueue(animal) {
     // compare if the animals is dog or cat or nether of them
     if (animal === dog || animal === cat) {
-      this.queue.enqueue(animal);
+      this.dogCat.enqueue(animal);
       return animal;
     } else {
       return "animal can not be either a dog or a cat.";
@@ -23,14 +23,18 @@ class AnimalShelter {
 
   dequeue(pref) {
     if (pref === dog || pref === cat) {
-      if (!this.queue.isEmpty()) {
-        this.queue.dequeue();
+      if (!this.dogCat.isEmpty()) {
+        this.dogCat.dequeue();
         return pref;
       }
-      return this.queue.dequeue(pref);
+      return this.dogCat.dequeue(pref);
     } else {
       return `${pref} : this shelter is for Dogs and Cats`;
     }
+  }
+
+  show() {
+    return this.dogCat.display();
   }
 }
 
@@ -48,6 +52,7 @@ console.log(animalShelter.dequeue(dog));
 console.log(animalShelter.dequeue(cat));
 console.log(animalShelter.dequeue(bird));
 
-// console.log(animalShelter.queue.display());
+animalShelter.show();
+console.log(animalShelter.dogCat.display());
 
 module.exports = AnimalShelter;
