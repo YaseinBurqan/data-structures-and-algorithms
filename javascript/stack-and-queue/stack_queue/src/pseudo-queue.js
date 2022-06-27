@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 "use strict";
 
-const Stack = require("./stack");
+const Stack = require("../stack");
 
 class PseudoQueue {
   constructor() {

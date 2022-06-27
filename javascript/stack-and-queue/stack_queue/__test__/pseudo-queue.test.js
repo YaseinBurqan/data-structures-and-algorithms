@@ -3,7 +3,7 @@
 "use strict";
 
 // Stack >> LIFO/FILO
-const pseudoQueue = require("../pseudo-queue");
+const pseudoQueue = require("../src/pseudo-queue");
 
 describe("pseudo queue", () => {
   test("Can successfully add into a Pseudo Queue ", () => {
