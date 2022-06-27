@@ -21,3 +21,4 @@ This page can keep track of my observations and questions from the challenge ass
 | Linked List | [Linked List](./linked-list/README.md) |
 | stack and queue | [stack-and-queue](./stack-and-queue/README.md) |
 | Pseudo Queue | [PseudoQueue](./stack-and-queue/pseudo-queue.md) |
+| stack queue animal shelter | [stack-queue-animal-shelter](./stack-and-queue/sq_animal_shelter/stack-queue-animal-shelter.md) |
