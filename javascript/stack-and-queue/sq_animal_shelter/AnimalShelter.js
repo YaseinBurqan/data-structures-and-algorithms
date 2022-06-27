@@ -20,7 +20,8 @@ class AnimalShelter {
       return "animal can not be either a dog or a cat.";
     }
   }
-
+  
+  // delete the animal from the Queue
   dequeue(pref) {
     if (pref === dog || pref === cat) {
       if (!this.dogCat.isEmpty()) {
@@ -51,8 +52,8 @@ console.log(animalShelter.enqueue(bird));
 console.log(animalShelter.dequeue(dog));
 console.log(animalShelter.dequeue(cat));
 console.log(animalShelter.dequeue(bird));
-
+console.log();
 animalShelter.show();
-console.log(animalShelter.dogCat.display());
+console.log(animalShelter);
 
 module.exports = AnimalShelter;
