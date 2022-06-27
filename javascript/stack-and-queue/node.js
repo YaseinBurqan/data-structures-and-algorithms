@@ -1,10 +1,12 @@
 /* eslint-disable quotes */
 "use strict";
 
+//to create a Node
 class Node {
-  constructor(value, next = null) {
-    this.value = value;
-    this.next = next;
+  // Node constructor
+  constructor(data) {
+    this.data = data;
+    this.next = null;
   }
 }
 

@@ -1,40 +1,38 @@
 /* eslint-disable quotes */
 "use strict";
 
-const Queue = require("../queue");
+const Queue = require("../src/queue");
 
 describe(" Queue test", () => {
   it("Can successfully enqueue into a queue", () => {
     let queue = new Queue();
     queue.enqueue(1);
-    expect(queue.front.value).toBe(1);
+    expect(queue.front.data).toBe(1);
   });
-  it("Can successfully enqueue multiple values into a queue", () => {
+  it("Can successfully enqueue multiple data into a queue", () => {
     let queue = new Queue();
     queue.enqueue(1);
     queue.enqueue(2);
     queue.enqueue(3);
     queue.enqueue(4);
 
-    expect(queue.front.value).toBe(1);
+    expect(queue.front.data).toBe(1);
   });
-  it("Can successfully dequeue out of a queue the expected value", () => {
+  test("Can successfully dequeue out of a queue the expected data", () => {
     let queue = new Queue();
-    queue.enqueue(1);
-    queue.enqueue(2);
-    queue.enqueue(3);
-    queue.enqueue(4);
-
-    expect(queue.dequeue()).toBe(1);
+    queue.enqueue("1");
+    queue.enqueue("2");
+    queue.enqueue("3");
+    queue.dequeue();
+    expect(queue.front.data).toBe("2");
   });
-  it("Can successfully peek into a queue, seeing the expected value", () => {
+  test("Can successfully peek into a queue, seeing the expected data", () => {
     let queue = new Queue();
-    queue.enqueue(1);
-    queue.enqueue(2);
-    queue.enqueue(3);
-    queue.enqueue(4);
-
-    expect(queue.peek()).toBe(1);
+    queue.enqueue("1");
+    queue.enqueue("2");
+    queue.enqueue("3");
+    queue.peek();
+    expect(queue.front.data).toBe("1");
   });
   it("Can successfully empty a queue after multiple dequeues", () => {
     let queue = new Queue();
