@@ -229,7 +229,7 @@ describe("Linked List", () => {
     ll1.append("a");
     ll1.append("t");
     let result = ll1.isPalindrome(ll1);
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   test("isPalindrome method -test2", () => {
@@ -239,7 +239,7 @@ describe("Linked List", () => {
     ll1.append("o");
     ll1.append("m");
     let result = ll1.isPalindrome(ll1);
-    expect(result).toEqual(true);
+    expect(result).toEqual(false);
   });
 
   test("isPalindrome method -test3", () => {

@@ -1,18 +1,12 @@
 /* eslint-disable quotes */
 "use static";
 
-/* 
-big O
-time complexity = O(n)
-space complexity = O(n)
- */
-
 // const Stack = require("../../stack_queue/src/stack");
 //   let parStack = new Stack();
 
 // `Truthy` values are Boolean values that resolve to `true`, while `falsy` values are values that resolve to Boolean `false`.
 
-// this function will take a string input and give me a boolean result (matching the brackets)
+// this function will take a string input and give me a Boolean  result (matching the brackets)
 
 let validateBrackets = (parentheses) => {
   // define a hash map : the keys are the opening one '( [ {' and the value are the closing one ') ] }' .
@@ -56,5 +50,7 @@ let validateBrackets = (parentheses) => {
 // console.log(validateBrackets("{{") + "12");
 // console.log(validateBrackets("{") + "13");
 // console.log(validateBrackets("({)}") + "14");
+// console.log(validateBrackets("({)}") + "14");
+// console.log(validateBrackets("()[[]]") + "15");
 
 module.exports = validateBrackets;
