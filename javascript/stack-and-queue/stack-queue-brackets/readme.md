@@ -1,24 +1,22 @@
-# stack queue animal shelter
+# stack queue Validate Brackets
 
 Create a Stack and Queue classes with some specs
 
 ## Challenge
 
+Code Challenge / Algorithm
+
 ### Features
 
-Create a class called AnimalShelter which holds only dogs and cats.
-The shelter operates using a first-in, first-out approach.
-Implement the following methods:
-enqueue
-Arguments: animal
-animal can be either a dog or a cat object.
-dequeue
-Arguments: pref
-pref can be either "dog" or "cat"
-Return: either a dog or a cat, based on preference.
-If pref is not "dog" or "cat" then return null.
+Write a function called validate brackets
+Arguments: string
+Return: boolean
+representing whether or not the brackets in the string are balanced
+There are 3 types of brackets:
 
-Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+Round Brackets : ()
+Square Brackets : []
+Curly Brackets : {}
 
 ### Queue
 
@@ -48,6 +46,6 @@ space: O(1) for each value
 
 - dequeue() : Removes the node from the front of the queue.
 
-# [Code](../sq_animal_shelter/)
+# [Code](../stack-queue-brackets/)
 
 ![AnimalShelter](../assets/AnimalShelter.jpg)

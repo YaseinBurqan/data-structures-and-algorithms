@@ -1,6 +1,6 @@
 "use strict";
 
-const Node = require("../node");
+const Node = require("../src/node");
 
 describe("node module test", () => {
   it("creat successfully node with value and next", () => {

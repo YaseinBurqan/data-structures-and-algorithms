@@ -2,7 +2,7 @@
 "use strict";
 
 // Require the linked list implementation
-const LinkedList = require("../../linked-list/linkedlist");
+const LinkedList = require("../../linked-list/src/linkedList");
 
 /*
   Accept a linked list
