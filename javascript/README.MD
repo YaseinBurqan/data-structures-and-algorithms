@@ -22,3 +22,4 @@ This page can keep track of my observations and questions from the challenge ass
 | stack and queue | [stack-and-queue](./stack-and-queue/README.md) |
 | Pseudo Queue | [PseudoQueue](./stack-and-queue/pseudo-queue.md) |
 | stack queue animal shelter | [stack-queue-animal-shelter](./stack-and-queue/sq_animal_shelter/stack-queue-animal-shelter.md) |
+| stack queue brackets | [stack-queue-brackets](./stack-and-queue/stack-queue-brackets/readme.md) |
