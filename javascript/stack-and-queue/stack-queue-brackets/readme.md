@@ -48,4 +48,4 @@ space: O(1) for each value
 
 # [Code](../stack-queue-brackets/)
 
-![AnimalShelter](../assets/AnimalShelter.jpg)
+![AnimalShelter](./assets/stack-queue-brackets.jpg)
