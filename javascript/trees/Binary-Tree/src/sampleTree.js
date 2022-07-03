@@ -57,3 +57,8 @@ console.log(BST.contains(6));
 console.log(BST.contains(15));
 console.log(BST.contains(20));
 console.log("------------------------");
+
+console.log(BST.maxNode());
+console.log("------------------------");
+console.log(BST.minNode());
+console.log("------------------------");

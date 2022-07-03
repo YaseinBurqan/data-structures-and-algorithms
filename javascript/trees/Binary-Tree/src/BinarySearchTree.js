@@ -54,6 +54,28 @@ class BinarySearchTree {
     }
     return false;
   }
+
+  // ----------------------------------------------------------
+
+  maxNode() {
+    if (!this.root) return null;
+    let current = this.root;
+    while (current.right) {
+      current = current.right;
+    }
+    return current.data;
+  }
+
+  // ----------------------------------------------------------
+
+  minNode() {
+    if (!this.root) return null;
+    let current = this.root;
+    while (current.left) {
+      current = current.left;
+    }
+    return current.data;
+  }
 }
 
 module.exports = BinarySearchTree;

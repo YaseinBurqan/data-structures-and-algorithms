@@ -109,4 +109,30 @@ describe("Binary Tree", () => {
 
     expect(tree.contains(6)).toBe(false);
   });
+
+  test("Git the maximum Node", () => {
+    let tree = new BinarySearchTree();
+    tree.add(2);
+    tree.add(7);
+    tree.add(6);
+    tree.add(5);
+    tree.add(11);
+    tree.add(5);
+    tree.add(9);
+    tree.add(4);
+    expect(tree.maxNode()).toEqual(11);
+  });
+
+  test("Git the minimum Node", () => {
+    let tree = new BinarySearchTree();
+    tree.add(2);
+    tree.add(7);
+    tree.add(6);
+    tree.add(5);
+    tree.add(11);
+    tree.add(5);
+    tree.add(9);
+    tree.add(4);
+    expect(tree.minNode()).toEqual(2);
+  });
 });
