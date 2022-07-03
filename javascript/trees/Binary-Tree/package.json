@@ -1,0 +1,16 @@
+{
+  "name": "binary-tree-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.2",
+    "nodemon": "^2.0.18"
+  }
+}
