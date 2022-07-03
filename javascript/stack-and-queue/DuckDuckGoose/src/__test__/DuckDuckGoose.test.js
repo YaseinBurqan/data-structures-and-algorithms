@@ -10,7 +10,7 @@ describe("Duck Duck Goose game using a Queue ", () => {
   });
   test("return the last value as a string in the list", () => {
     expect(DuckDuckGoose("A", "B", "C", "D", "E", 3)).toEqual(
-      "only Y is lefts"
+      "only D is lefts"
     );
   });
 });
