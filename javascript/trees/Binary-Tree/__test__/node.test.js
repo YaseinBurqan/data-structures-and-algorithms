@@ -1,14 +1,13 @@
 "use strict";
 
-const Node = require("../src/node");
+const Node = require("../node");
 
 describe("node module test", () => {
   it("creat successfully node with Data and next", () => {
-    const testData = "test";
-    const node = new Node(testData);
-    expect(node.data).toBe(testData);
+    const node = new Node(1);
+    expect(node).toBeInstanceOf(Node);
+    expect(node.data).toEqual(1);
     expect(node.left).toBeNull();
     expect(node.right).toBeNull();
-    expect(node).toBeInstanceOf(Node);
   });
 });
