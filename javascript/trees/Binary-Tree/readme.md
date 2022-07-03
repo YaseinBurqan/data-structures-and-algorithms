@@ -50,8 +50,17 @@
 - Insert(value): add a value of any type in a new node to the `Tree` in a specific location.
 - contain(value): check and compare input value if it is exist in the `Tree` and return `Boolean` result.
 - preOrder(): Traverse a tree --> root, left, right.
-
 - inOrder(): Traverse a tree --> left, root, right.
 - postOrder(): Traverse a tree --> left, right, root.
+- MaxNode(): To have the maximum Node
+- minNode(): To have the minimum Node
 
 ## [Code](../Binary-Tree/)
+
+### Max
+
+![Max Tree](./assets/maxNode.jpg)
+
+### Min
+
+![Min Tree](./assets/minNode.jpg)
