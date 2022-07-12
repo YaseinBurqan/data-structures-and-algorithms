@@ -1,7 +1,10 @@
 /* eslint-disable quotes */
 "use strict";
 
+const Queue = require("../../../stack-and-queue/stack_queue/src/queue");
+
 const Node = require("../node");
+// const Queue = require("../../../stack-and-queue/stack_queue/src/queue");
 // const BinaryTree = require("./BinaryTree");
 
 class BinarySearchTree {
@@ -42,6 +45,9 @@ class BinarySearchTree {
 
   // ----------------------------------------------------------
   contains(value) {
+    if (!this.root) {
+      return false;
+    }
     let current = this.root;
     while (current) {
       if (value < current.value) {
@@ -51,8 +57,18 @@ class BinarySearchTree {
       } else {
         return true;
       }
+      return value;
     }
     return false;
+
+    //  if (!this.root) {
+    //    return false;
+    //  } else if (
+    //    this.root.left.value === value ||
+    //    this.root.right.value === value
+    //  ) {
+    //    return true;
+    //  } else return false;
   }
 
   // ----------------------------------------------------------
@@ -76,6 +92,53 @@ class BinarySearchTree {
     }
     return current.data;
   }
+
+  // ----------------------------------------------------------
+
+  breadthFirst(tree) {
+    if (this.root === null) return "Empty tree";
+
+    let queue = new Queue();
+    queue.enqueue(tree.root);
+
+    let result = [];
+
+    while (queue.front !== null && queue.rear !== null) {
+      let node = queue.dequeue();
+      result.push(this.root);
+
+      if (node.left !== null) {
+        queue.enqueue(node.left);
+        result.push(node.left);
+      }
+      if (node.right !== null) {
+        queue.enqueue(node.right);
+        result.push(node.right);
+      }
+    }
+    return result;
+  }
+
+  // ----------------------------------------------------------
+
+  find(value) {
+    if (!this.root) return undefined;
+    let current = this.root;
+    let found = false;
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return undefined;
+    return current;
+  }
+
+  // ----------------------------------------------------------
 }
 
 module.exports = BinarySearchTree;

@@ -6,59 +6,66 @@ const BinaryTree = require("./BinaryTree");
 const BinaryTreeSearch = require("./BinarySearchTree");
 
 let tree = null;
+//--------------------------------------------
+// let one = new Node(1);
+// let two = new Node(2);
+// let three = new Node(3);
+// let four = new Node(4);
+// let five = new Node(5);
+// let six = new Node(6);
+// let seven = new Node(7);
+// let eight = new Node(8);
+// let nine = new Node(9);
 
-let one = new Node(1);
-let two = new Node(2);
-let three = new Node(3);
-let four = new Node(4);
-let five = new Node(5);
-let six = new Node(6);
-let seven = new Node(7);
-let eight = new Node(8);
-let nine = new Node(9);
+// one.left = two;
+// one.right = three;
+// two.left = six;
+// six.right = seven;
+// seven.left = eight;
+// seven.right = nine;
+// three.left = four;
+// three.right = five;
+//--------------------------------------------
+let one = new Node(2);
+let two = new Node(7);
+let three = new Node(5);
+let four = new Node(2);
+let five = new Node(6);
+let seven = new Node(4);
+let eight = new Node(9);
+let nine = new Node(11);
 
 one.left = two;
 one.right = three;
-two.left = six;
-six.right = seven;
-seven.left = eight;
-seven.right = nine;
-three.left = four;
-three.right = five;
+two.left = four;
+two.right = five;
+three.left = null;
+three.right = eight;
+five.left = three;
+five.right = nine;
+eight.left = seven;
+//--------------------------------------------
 
 tree = new BinaryTree(one);
 let BST = new BinaryTreeSearch();
 
-BST.add(10);
-BST.add(11);
-BST.add(5);
-BST.add(13);
-BST.add(13);
-BST.add(6);
-BST.add(15);
+//--------------------------------------------
 
-console.log("------------------------");
-let preOrder = tree.preOrder();
-console.log("pre order: ", preOrder);
-//pre order > 1 , 2 , 6 , 7 , 8 , 9 , 3 , 4 , 5
-console.log("------------------------");
-
-let inOrder = tree.inOrder();
-console.log("in order: ", inOrder);
-//pre order > 6 , 8 , 7 , 9 , 2 , 1 , 4 , 3 , 5
-console.log("------------------------");
-
-let postOrder = tree.postOrder();
-console.log("post order: ", postOrder);
-//pre order > 8 , 9 , 7 , 6 , 2 , 4 , 5 , 3 , 1
-console.log("------------------------");
-
+console.log(BST);
+console.log(tree);
 console.log(BST.contains(6));
 console.log(BST.contains(15));
 console.log(BST.contains(20));
 console.log("------------------------");
 
-console.log(BST.maxNode());
+console.log("max " + BST.maxNode());
 console.log("------------------------");
-console.log(BST.minNode());
+console.log("min " + BST.minNode());
+console.log("------------------------");
+console.log("find " + BST.find(6));
+console.log("------------------------");
+
+// let breadthFirstTree = BST.breadthFirst();
+// console.log("breadthFirstTree : ", breadthFirstTree);
+//  breadthFirst => [2, 7, 5, 2, 6, 9, 5, 11, 4];
 console.log("------------------------");

@@ -64,3 +64,7 @@
 ### Min
 
 ![Min Tree](./assets/minNode.jpg)
+
+### Breadth First
+
+![Min Tree](./assets/breadthFirst.jpg)
