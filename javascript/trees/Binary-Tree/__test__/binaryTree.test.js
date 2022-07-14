@@ -136,31 +136,34 @@ describe("Binary Tree", () => {
     expect(tree.minNode()).toEqual(2);
   });
 
-  test("tree breadth first", () => {
-    let one = new Node(2);
-    let two = new Node(7);
-    let three = new Node(5);
-    let four = new Node(2);
-    let five = new Node(6);
-    let six = new Node(9);
-    let seven = new Node(5);
-    let eight = new Node(11);
-    let nine = new Node(4);
-
-    one.left = two;
-    one.right = three;
-    two.left = four;
-    two.right = four;
-    five.left = seven;
-    five.right = eight;
-    three.right = six;
-    six.left = nine;
-
-    tree = new BinarySearchTree(one);
-    expect(tree.breadthFirst(tree)).toEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
-  });
-  test("return empty tree", () => {
+  test("testing empty tree", () => {
     const tree = new BinarySearchTree();
-    expect(tree.breadthFirst()).toEqual("Empty tree");
+    expect(tree.breadthFirst()).toEqual("empty tree");
+  });
+  test("testing breadth first method", () => {
+    const tree = new BinarySearchTree();
+    tree.add(8);
+    tree.add(7);
+    tree.add(10);
+    tree.add(6);
+    tree.add(77);
+    tree.add(19);
+    expect(tree.breadthFirst()).toEqual([8, 7, 10, 6, 77, 19]);
+  });
+
+  test("testing empty tree", () => {
+    const tree = new BinarySearchTree();
+    expect(tree.fizzBuzzTree()).toEqual("empty tree");
+  });
+  test("testing Fizz Buzz Tree method", () => {
+    const tree = new BinarySearchTree();
+    tree.add(15);
+    tree.add(2);
+    tree.add(3);
+    tree.add(4);
+    tree.add(5);
+
+    // expect(tree.breadthFirst()).toEqual([15, 2, 3, 4, 5]);
+    expect(tree.fizzBuzzTree()).toEqual(["FizzBuzz", "2", "Fizz", "4", "Buzz"]);
   });
 });
