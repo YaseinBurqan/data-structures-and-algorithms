@@ -68,3 +68,7 @@
 ### Breadth First
 
 ![Min Tree](./assets/breadthFirst.jpg)
+
+### FizzBuzz
+
+![FizzBuzz Tree](./assets/fizzBuzz.jpg)

@@ -51,21 +51,28 @@ let BST = new BinaryTreeSearch();
 
 //--------------------------------------------
 
+BST.add(15);
+BST.add(2);
+BST.add(3);
+BST.add(4);
+BST.add(5);
+
+//--------------------------------------------
+
 console.log(BST);
 console.log(tree);
 console.log(BST.contains(6));
 console.log(BST.contains(15));
 console.log(BST.contains(20));
-console.log("------------------------");
 
-console.log("max " + BST.maxNode());
 console.log("------------------------");
-console.log("min " + BST.minNode());
+console.log("Max " + BST.maxNode());
 console.log("------------------------");
-console.log("find " + BST.find(6));
+console.log("Min " + BST.minNode());
 console.log("------------------------");
-
-// let breadthFirstTree = BST.breadthFirst();
-// console.log("breadthFirstTree : ", breadthFirstTree);
-//  breadthFirst => [2, 7, 5, 2, 6, 9, 5, 11, 4];
+console.log("Find " + BST.find(6));
+console.log("------------------------");
+console.log("Breadth First " + BST.breadthFirst());
+console.log("------------------------");
+console.log("Fizz Buzz Tree " + BST.fizzBuzzTree());
 console.log("------------------------");

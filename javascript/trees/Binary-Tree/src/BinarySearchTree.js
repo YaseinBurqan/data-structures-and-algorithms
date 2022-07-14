@@ -1,8 +1,6 @@
 /* eslint-disable quotes */
 "use strict";
 
-const Queue = require("../../../stack-and-queue/stack_queue/src/queue");
-
 const Node = require("../node");
 // const Queue = require("../../../stack-and-queue/stack_queue/src/queue");
 // const BinaryTree = require("./BinaryTree");
@@ -95,28 +93,48 @@ class BinarySearchTree {
 
   // ----------------------------------------------------------
 
-  breadthFirst(tree) {
-    if (this.root === null) return "Empty tree";
-
-    let queue = new Queue();
-    queue.enqueue(tree.root);
-
+  breadthFirst() {
+    // FIFO
+    let queue = [];
+    // save the result
     let result = [];
+    //init the node
+    let node;
 
-    while (queue.front !== null && queue.rear !== null) {
-      let node = queue.dequeue();
-      result.push(this.root);
+    if (!this.root) return "empty tree";
+    else {
+      queue.push(this.root);
 
-      if (node.left !== null) {
-        queue.enqueue(node.left);
-        result.push(node.left);
-      }
-      if (node.right !== null) {
-        queue.enqueue(node.right);
-        result.push(node.right);
+      while (queue.length) {
+        node = queue.shift();
+        result.push(node.data);
+
+        if (node.left) {
+          queue.push(node.left);
+        }
+        if (node.right) {
+          queue.push(node.right);
+        }
       }
     }
     return result;
+  }
+
+  // ----------------------------------------------------------
+
+  fizzBuzzTree() {
+    let node = this.breadthFirst();
+    let FizzBuzzResult = [];
+
+    while (node.length) {
+      if (node.value % 3 === 0 && node.value % 5 === 0)
+        FizzBuzzResult.push("FizzBuzz");
+      if (node.value % 3 === 0) FizzBuzzResult.push("Fizz");
+      if (node.value % 5 === 0) FizzBuzzResult.push("Buzz");
+      else FizzBuzzResult.push(`${node.value}`);
+    }
+
+    return FizzBuzzResult;
   }
 
   // ----------------------------------------------------------
