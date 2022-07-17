@@ -123,6 +123,8 @@ class BinarySearchTree {
   // ----------------------------------------------------------
 
   fizzBuzzTree() {
+    if (!this.root) return "empty tree";
+
     let node = this.breadthFirst();
     let FizzBuzzResult = [];
 
@@ -135,6 +137,43 @@ class BinarySearchTree {
     }
 
     return FizzBuzzResult;
+  }
+
+  // ----------------------------------------------------------
+
+  sumOfAllOdd() {
+    if (!this.root) return "empty tree";
+
+    let node = this.breadthFirst();
+    let oddArray = [];
+    let sumOddResult = 0;
+
+    while (node.length) {
+      if (node.value % 2 !== 0) oddArray.push(node);
+      else continue;
+    }
+    for (let i = 0; i < oddArray.length; i++) {
+      sumOddResult += oddArray[i];
+    }
+    return sumOddResult;
+  }
+  // ----------------------------------------------------------
+
+  sumOfAllEven() {
+    if (!this.root) return "empty tree";
+
+    let node = this.breadthFirst();
+    let evenArray = [];
+    let sumEvenResult = 0;
+
+    while (node.length) {
+      if (node.value % 2 === 0) evenArray.push(node);
+      else continue;
+    }
+    for (let i = 0; i < evenArray.length; i++) {
+      sumEvenResult += evenArray[i];
+    }
+    return sumEvenResult;
   }
 
   // ----------------------------------------------------------

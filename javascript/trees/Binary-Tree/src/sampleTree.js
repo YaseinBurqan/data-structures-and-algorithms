@@ -26,24 +26,31 @@ let tree = null;
 // three.left = four;
 // three.right = five;
 //--------------------------------------------
-let one = new Node(2);
-let two = new Node(7);
-let three = new Node(5);
-let four = new Node(2);
+let one = new Node(8);
+let two = new Node(3);
+let three = new Node(10);
+let four = new Node(1);
 let five = new Node(6);
-let seven = new Node(4);
-let eight = new Node(9);
-let nine = new Node(11);
+let seven = new Node(14);
+let eight = new Node(4);
+let nine = new Node(7);
+let tine = new Node(13);
 
 one.left = two;
 one.right = three;
+
 two.left = four;
 two.right = five;
+
 three.left = null;
-three.right = eight;
-five.left = three;
+three.right = seven;
+
+five.left = eight;
 five.right = nine;
-eight.left = seven;
+
+seven.left = tine;
+seven.right = null;
+
 //--------------------------------------------
 
 tree = new BinaryTree(one);
@@ -51,11 +58,15 @@ let BST = new BinaryTreeSearch();
 
 //--------------------------------------------
 
-BST.add(15);
-BST.add(2);
+BST.add(8);
 BST.add(3);
+BST.add(10);
+BST.add(1);
+BST.add(6);
+BST.add(14);
 BST.add(4);
-BST.add(5);
+BST.add(7);
+BST.add(13);
 
 //--------------------------------------------
 
@@ -75,4 +86,8 @@ console.log("------------------------");
 console.log("Breadth First " + BST.breadthFirst());
 console.log("------------------------");
 console.log("Fizz Buzz Tree " + BST.fizzBuzzTree());
+console.log("------------------------");
+console.log("sum Of All odd value Tree " + BST.sumOfAllOdd());
+console.log("------------------------");
+console.log("sum Of All even value Tree " + BST.sumOfAllEven());
 console.log("------------------------");
