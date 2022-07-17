@@ -72,3 +72,7 @@
 ### FizzBuzz
 
 ![FizzBuzz Tree](./assets/fizzBuzz.jpg)
+
+### Sum of all odd
+
+![SumOfAllOdd Tree](./assets/SumOfAllOdd.jpg)
