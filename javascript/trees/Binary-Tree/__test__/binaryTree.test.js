@@ -61,7 +61,7 @@ describe("Binary Tree", () => {
   test("Can successfully instantiate a tree with a single root node", () => {
     let node = new Node(1);
     const tree = new BinaryTree(node);
-    expect(tree.root.data).toEqual(1);
+    expect(tree.root.value).toEqual(1);
   });
 
   test("For a Binary Search Tree, can successfully add a left child and right child properly to a node", () => {
@@ -71,9 +71,9 @@ describe("Binary Tree", () => {
     let tree = new BinaryTree(n1);
     n1.left = n2;
     n1.right = n3;
-    expect(tree.root.data).toBe(1);
-    expect(tree.root.left.data).toBe(2);
-    expect(tree.root.right.data).toBe(3);
+    expect(tree.root.value).toBe(1);
+    expect(tree.root.left.value).toBe(2);
+    expect(tree.root.right.value).toBe(3);
   });
 
   test("Can successfully return a collection from a preOrder traversal", () => {
@@ -116,24 +116,12 @@ describe("Binary Tree", () => {
     tree.add(7);
     tree.add(6);
     tree.add(5);
-    tree.add(11);
     tree.add(5);
     tree.add(9);
     tree.add(4);
-    expect(tree.maxNode()).toEqual(11);
-  });
-
-  test("Git the minimum Node", () => {
-    let tree = new BinarySearchTree();
-    tree.add(2);
-    tree.add(7);
-    tree.add(6);
-    tree.add(5);
     tree.add(11);
-    tree.add(5);
-    tree.add(9);
-    tree.add(4);
     expect(tree.minNode()).toEqual(2);
+    expect(tree.maxNode()).toEqual(11);
   });
 
   test("testing empty tree", () => {
@@ -184,7 +172,21 @@ describe("Binary Tree", () => {
     tree.add(7);
     tree.add(13);
 
-    expect(tree.sumOfAllOdd()).toEqual("24");
-    expect(tree.sumOfAllEven()).toEqual("42");
+    expect(tree.sumOfAllOdd()).toEqual(24);
+    expect(tree.sumOfAllEven()).toEqual(42);
+  });
+  test("testing Fizz Buzz Tree method", () => {
+    const tree = new BinarySearchTree();
+    tree.add(1);
+    tree.add(8);
+    tree.add(3);
+    tree.add(10);
+    tree.add(6);
+    tree.add(14);
+    tree.add(4);
+    tree.add(7);
+    tree.add(13);
+
+    expect(tree.find(1)).toEqual(true);
   });
 });

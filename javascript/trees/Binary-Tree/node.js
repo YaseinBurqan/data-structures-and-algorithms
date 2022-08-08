@@ -3,7 +3,7 @@
 
 class Node {
   constructor(value, left = null, right = null) {
-    this.data = value;
+    this.value = value;
     this.left = left;
     this.right = right;
     this.children = [];

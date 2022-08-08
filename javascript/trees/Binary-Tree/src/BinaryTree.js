@@ -9,7 +9,7 @@ class BinaryTree {
   preOrder() {
     let result = [];
     let traverse = (node) => {
-      result.push(node.data);
+      result.push(node.value);
       // if left go left
       if (node.left) traverse(node.left);
       // if right go right
@@ -25,7 +25,7 @@ class BinaryTree {
     let traverse = (node) => {
       // if left go left
       if (node.left) traverse(node.left);
-      result.push(node.data);
+      result.push(node.value);
       // if right go right
       if (node.right) traverse(node.right);
     };
@@ -41,7 +41,7 @@ class BinaryTree {
       if (node.left) traverse(node.left);
       // if right go right
       if (node.right) traverse(node.right);
-      result.push(node.data);
+      result.push(node.value);
     };
     traverse(this.root);
     return result;
