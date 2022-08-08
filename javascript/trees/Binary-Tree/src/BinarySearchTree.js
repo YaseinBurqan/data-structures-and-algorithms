@@ -58,15 +58,6 @@ class BinarySearchTree {
       return value;
     }
     return false;
-
-    //  if (!this.root) {
-    //    return false;
-    //  } else if (
-    //    this.root.left.value === value ||
-    //    this.root.right.value === value
-    //  ) {
-    //    return true;
-    //  } else return false;
   }
 
   // ----------------------------------------------------------
@@ -94,11 +85,8 @@ class BinarySearchTree {
   // ----------------------------------------------------------
 
   breadthFirst() {
-    // FIFO
     let queue = [];
-    // save the result
     let result = [];
-    //init the node
     let node;
 
     if (!this.root) return "empty tree";
@@ -107,7 +95,7 @@ class BinarySearchTree {
 
       while (queue.length) {
         node = queue.shift();
-        result.push(node.data);
+        result.push(node.value);
 
         if (node.left) {
           queue.push(node.left);
@@ -127,15 +115,16 @@ class BinarySearchTree {
 
     let node = this.breadthFirst();
     let FizzBuzzResult = [];
+    let i = 0;
 
-    while (node.length) {
-      if (node.value % 3 === 0 && node.value % 5 === 0)
+    while (i < node.length) {
+      if (node[i] % 3 === 0 && node[i] % 5 === 0)
         FizzBuzzResult.push("FizzBuzz");
-      if (node.value % 3 === 0) FizzBuzzResult.push("Fizz");
-      if (node.value % 5 === 0) FizzBuzzResult.push("Buzz");
-      else FizzBuzzResult.push(`${node.value}`);
+      else if (node[i] % 3 === 0) FizzBuzzResult.push("Fizz");
+      else if (node[i] % 5 === 0) FizzBuzzResult.push("Buzz");
+      else FizzBuzzResult.push(`${node[i]}`);
+      i++;
     }
-
     return FizzBuzzResult;
   }
 
@@ -145,15 +134,12 @@ class BinarySearchTree {
     if (!this.root) return "empty tree";
 
     let node = this.breadthFirst();
-    let oddArray = [];
     let sumOddResult = 0;
 
-    while (node.length) {
-      if (node.value % 2 !== 0) oddArray.push(node);
-      else continue;
-    }
-    for (let i = 0; i < oddArray.length; i++) {
-      sumOddResult += oddArray[i];
+    let i = 0;
+    while (i < node.length) {
+      if (node[i] % 2 !== 0) sumOddResult += node[i];
+      i++;
     }
     return sumOddResult;
   }
@@ -163,15 +149,12 @@ class BinarySearchTree {
     if (!this.root) return "empty tree";
 
     let node = this.breadthFirst();
-    let evenArray = [];
     let sumEvenResult = 0;
 
-    while (node.length) {
-      if (node.value % 2 === 0) evenArray.push(node);
-      else continue;
-    }
-    for (let i = 0; i < evenArray.length; i++) {
-      sumEvenResult += evenArray[i];
+    let i = 0;
+    while (i < node.length) {
+      if (node[i] % 2 === 0) sumEvenResult += node[i];
+      i++;
     }
     return sumEvenResult;
   }
@@ -179,20 +162,18 @@ class BinarySearchTree {
   // ----------------------------------------------------------
 
   find(value) {
-    if (!this.root) return undefined;
-    let current = this.root;
-    let found = false;
-    while (current && !found) {
-      if (value < current.value) {
-        current = current.left;
-      } else if (value > current.value) {
-        current = current.right;
-      } else {
-        found = true;
+    if (!this.root) return "empty tree";
+    else {
+      let node = this.breadthFirst();
+
+      let found = false;
+      let i = 0;
+      while (i < node.length) {
+        if (node[i] === value) found = true;
+        i++;
       }
+      return found;
     }
-    if (!found) return undefined;
-    return current;
   }
 
   // ----------------------------------------------------------
