@@ -43,6 +43,10 @@ Insertion Sort Implementation that sorting the array.
 
 ![Sort](./assets/sort.jpg)
 
+#
+
 ![merge](./assets/merge.jpg)
+
+#
 
 ![merge](./assets/quickSort.jpg)
