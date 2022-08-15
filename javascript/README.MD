@@ -23,4 +23,4 @@ This page can keep track of my observations and questions from the challenge ass
 | Pseudo Queue | [PseudoQueue](./stack-and-queue/pseudo-queue.md) |
 | stack queue animal shelter | [stack-queue-animal-shelter](./stack-and-queue/sq_animal_shelter/stack-queue-animal-shelter.md) |
 | Tree | [Tree](./trees/readme.md) |
-| Insertion Sort | [Insertion Sort](./insertationSort//readme.md) |
+| Insertion Sort | [Sorting](./sorting/readme.md) |
