@@ -8,39 +8,39 @@ function mergeSort(arr) {
     const mid = Math.floor(n / 2);
     const left = arr.slice(0, mid);
     const right = arr.slice(mid, n);
-    return merge(left, right);
+    return merge(left, right,arr);
   } else {
     return arr;
   }
 }
 
-function merge(left, right) {
+function merge(left, right,arr) {
   let i = 0;
   let j = 0;
   let k = 0;
-  let newArr = [];
 
   while (i < left.length && j < right.length) {
     if (left[i] <= right[j]) {
-      newArr[k] = left[i];
-      console.log("if array k " + newArr);
+      arr[k] = left[i];
       i++;
     } else {
-      newArr[k] = right[i];
-      console.log("else array k " + newArr);
-      i++;
+      arr[k] = right[j];
+      j++;
     }
     k++;
   }
 
   if (i === left.length) {
-    newArr[k] = right[i];
-    i++;
+    arr[k] = right[j];
+    j++;
+    k++;
   } else {
-    return newArr;
+    arr[k] = left[i];
+    i = i + 1;
+    k = k + 1;
   }
 
-  return newArr;
+  return arr;
 }
 
 module.exports = mergeSort;
