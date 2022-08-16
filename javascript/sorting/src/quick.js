@@ -20,7 +20,6 @@ function partition(arr, left, right) {
     }
     swap(arr, i, low);
   }
-
   // place the value of the pivot location in the middle.
   // all numbers smaller than the pivot are on the left, larger on the right.
   swap(arr, right, low + 1);
@@ -33,6 +32,7 @@ function swap(arr, i, low) {
   temp = arr[i];
   arr[i] = arr[low];
   arr[low] = temp;
+  return temp;
 }
 
 module.exports = quickSort;
