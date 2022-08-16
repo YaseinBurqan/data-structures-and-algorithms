@@ -49,4 +49,4 @@ Insertion Sort Implementation that sorting the array.
 
 #
 
-![merge](./assets/quickSort.jpg)
+![merge](./assets/quick.jpg)
