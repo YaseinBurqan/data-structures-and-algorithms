@@ -1,66 +1,62 @@
-const LinkedList = require("../linked-list/src/linkedList");
-
+// const LinkedList = require("../linked-list/linkedList");
 class HashTable {
   constructor(size) {
-    this.size = size;
     this.table = new Array(size);
+    this.size = size;
   }
 
   hash(key) {
-    const asciiCodeSum = key.split("").reduce((acc, cur) => {
-      return acc + cur.charCodeAt(0);
-    }, 0);
-    const multiPrime = asciiCodeSum * 599;
-    const theIndex = multiPrime % this.size;
-    console.log(theIndex);
-    return theIndex;
+    let total = 0;
+    for (let i = 0; i < key.length; i++) {
+      total += key.charCodeAt(i);
+    }
+    return total % this.size;
   }
 
   set(key, value) {
-    const hash = this.hash(key);
-    if (!this.map[hash]) {
-      this.map[hash] = new LinkedList();
+    const index = this.hash(key);
+    const bucket = this.table[index];
+    if (!bucket) {
+      this.table[index] = [[key, value]];
+    } else {
+      const sameKeyItem = bucket.find((item) => item[0] === key);
+      if (sameKeyItem) {
+        sameKeyItem[1] = value;
+      } else {
+        bucket.push([key, value]);
+      }
     }
-    this.map[hash].append({ [key]: value });
   }
 
   get(key) {
-    if (this.table[this.hash(key)]) {
-      let current = this.table[this.hash(key)].head;
-      while (current) {
-        if (current.value[key]) {
-          return current.value[key];
-        } else {
-          current = current.next;
-        }
+    const index = this.hash(key);
+    const bucket = this.table[index];
+    if (bucket) {
+      const sameKeyItem = bucket.find((item) => item[0] === key);
+      if (sameKeyItem) {
+        return sameKeyItem[1];
       }
     }
-    return null;
+    return undefined;
   }
 
-  contains(key) {
-    if (this.table[this.hash(key)]) {
-      let current = this.table[this.hash(key)].head;
-      while (current) {
-        if (current.value[key]) return true;
-        current = current.next;
+  remove(key) {
+    let index = this.hash(key);
+    const bucket = this.table[index];
+    if (bucket) {
+      const sameKeyItem = bucket.find((item) => item[0] === key);
+      if (sameKeyItem) {
+        bucket.splice(bucket.indexOf(sameKeyItem), 1);
       }
-      return false;
-    } else {
-      return false;
     }
   }
 
-  keys() {
-    let keys = [];
-    this.map.forEach((element) => {
-      let currentNode = element.head;
-      while (currentNode) {
-        keys.push(Object.keys(currentNode.value));
-        currentNode = currentNode.next;
+  display() {
+    for (let i = 0; i < this.table.length; i++) {
+      if (this.table[i]) {
+        console.log(i, this.table[i]);
       }
-    });
-    return keys;
+    }
   }
 }
 

@@ -19,6 +19,95 @@ class LinkedList {
     // To track the size of the list, 0 is the initial index.
     this.size = 0;
   }
+  //(Insert)-------------------------------------------------------------------------------------------------------------------------------
+
+  prepend(value) {
+    const node = new Node(value);
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+    this.size++;
+  }
+
+  // Append adding Node in the end of the tail Linked List.
+  append(value) {
+    const node = new Node(value);
+    if (this.isEmpty()) {
+      this.head = node;
+    } else {
+      let curr = this.head;
+      while (curr.next) {
+        curr = curr.next;
+      }
+      curr.next = node;
+    }
+    this.size++;
+  }
+
+  removeFrom(index) {
+    if (index < 0 || index >= this.size) {
+      return null;
+    }
+    let removedNode;
+    if (index === 0) {
+      removedNode = this.head;
+      this.head = this.head.next;
+    } else {
+      let prev = this.head;
+      for (let i = 0; i < index - 1; i++) {
+        prev = prev.next;
+      }
+      removedNode = prev.next;
+      prev.next = removedNode.next;
+    }
+    this.size--;
+    return removedNode.value;
+  }
+
+  search(value) {
+    if (this.isEmpty()) {
+      return -1;
+    }
+    let i = 0;
+    let curr = this.head;
+    while (curr) {
+      if (curr.value === value) {
+        return i;
+      }
+      curr = curr.next;
+      i++;
+    }
+    return -1;
+  }
+
+  reverse() {
+    let prev = null;
+    let curr = this.head;
+    while (curr) {
+      let next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    this.head = prev;
+  }
+
+  print() {
+    if (this.isEmpty()) {
+      console.log("List is empty");
+    } else {
+      let curr = this.head;
+      let list = "";
+      while (curr) {
+        list += `${curr.value}->`;
+        curr = curr.next;
+      }
+      console.log(list);
+    }
+  }
 
   //(Insert)-------------------------------------------------------------------------------------------------------------------------------
   // Insert Node
@@ -82,23 +171,6 @@ class LinkedList {
       current.next = node;
     }
     // make the list size increase after adding a new Node.
-    this.size++;
-  }
-
-  // Append adding Node in the end of the tail Linked List.
-  append(value) {
-    // Create a new Node to insert it.
-    let node = new Node(value);
-
-    // check if the list is empty
-    // if (!this.head) or
-    if (this.size === 0) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      node.next = this.head;
-      this.head = node;
-    }
     this.size++;
   }
 
@@ -362,18 +434,6 @@ class LinkedList {
       return false;
     }
   } //-------------------------------------------------------------------------------------------------------------------------------
-  // To Array
-  toArray() {}
-  //-------------------------------------------------------------------------------------------------------------------------------
-  // Git last elements
-  getLast() {}
-  //-------------------------------------------------------------------------------------------------------------------------------
-  // Reverse the list of the Nodes
-  reverse() {}
-  //-------------------------------------------------------------------------------------------------------------------------------
-  //-------------------------------------------------------------------------------------------------------------------------------
-  //-------------------------------------------------------------------------------------------------------------------------------
-  //-------------------------------------------------------------------------------------------------------------------------------
 
   insertBefore(value, newValue) {
     let current = this.head;

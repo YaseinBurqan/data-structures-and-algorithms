@@ -4,6 +4,6 @@
 const express = require("express");
 const app = express();
 
-const LinkedList = require("./src/linkedList");
+const LinkedList = require("./linkedList");
 
 app.use(LinkedList);

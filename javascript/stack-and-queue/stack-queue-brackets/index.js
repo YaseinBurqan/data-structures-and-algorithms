@@ -1,1 +1,1 @@
-require("./src/balanceParenthesis");
+require("./balanceParenthesis");

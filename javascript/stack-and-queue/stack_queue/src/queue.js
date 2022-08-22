@@ -14,7 +14,8 @@ class Queue {
   }
 
   isEmpty() {
-    return this.front === null && this.rear === null;
+    return this.rear - this.front === 0;
+    // return this.front === null && this.rear === null;
   }
 
   // insert a Node
@@ -75,18 +76,14 @@ class Queue {
     // print the result from the front  to the rear Node
     return console.log(result + "REAR");
   }
-}
 
-// const queue = new Queue();
-// queue.enqueue(1);
-// queue.enqueue(2);
-// queue.enqueue(3);
-// queue.enqueue(4);
-// queue.enqueue(5);
-// queue.display();
-// queue.dequeue();
-// queue.dequeue();
-// queue.display();
-// queue.peek();
+  size() {
+    return this.rear - this.front;
+  }
+
+  print() {
+    console.log(this.items);
+  }
+}
 
 module.exports = Queue;
