@@ -71,4 +71,4 @@ hash
 
 ## [The Code](./hashTable.js)
 
- [First Repeated Word]('./images/firstRepeatedWord.jpg')
+ ![First Repeated Word]('./images/firstRepeatedWord.jpg')
