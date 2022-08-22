@@ -37,6 +37,7 @@ class Stack {
 
     // shift the head to the head next position
     this.head = this.head.next;
+    // this.head.pop();
   }
 
   // to see the head Node data
@@ -74,16 +75,5 @@ class Stack {
     return console.log(result + "FRONT");
   }
 }
-// const stack = new Stack();
-// stack.push(1);
-// stack.push(2);
-// stack.push(3);
-// stack.push(4);
-// stack.push(5);
-// stack.display();
-// stack.pop();
-// stack.pop();
-// stack.display();
-// stack.peek();
 
 module.exports = Stack;
