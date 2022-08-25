@@ -25,3 +25,4 @@ This page can keep track of my observations and questions from the challenge ass
 | Tree | [Tree](./trees/readme.md) |
 | Insertion Sort | [Sorting](./sorting/readme.md) |
 | Hash Table | [hashTable](./hash-table/readme.md) |
+| Intersection | [Intersection](./tree-intersection//readme.md) |
