@@ -125,19 +125,19 @@ class HashTable {
     return letters;
   }
 
-  countRepeatedWords(string) {
+  countRepeatedWord(string) {
     let arr = string.split(" ");
-    let words = [];
+    let str = [];
 
     for (let word of arr) {
-      if (!words[word]) {
-        words[word] = 1;
+      if (!str[word]) {
+        str[word] = 1;
       } else {
-        words[word]++;
+        str[word]++;
       }
     }
 
-    return words;
+    return str;
   }
 
   firstRepeatedLetter(string) {
@@ -162,18 +162,18 @@ class HashTable {
 
   firstRepeatedWord(string) {
     let arr = string.split(" ");
-    let words = {};
+    let str = {};
 
     for (let word of arr) {
-      if (!words[word]) {
-        words[word] = 1;
+      if (!str[word]) {
+        str[word] = 1;
       } else {
-        words[word]++;
+        str[word]++;
       }
     }
 
-    for (let key in words) {
-      if (words[key] > 1) {
+    for (let key in str) {
+      if (str[key] > 1) {
         return key;
       }
     }
@@ -197,6 +197,42 @@ class HashTable {
       }
       return result;
     }
+  }
+
+  mostCommonWord(string) {
+    if (string === "") {
+      return "empty value";
+    }
+    const lowerCase = string.toLowerCase();
+    const str = this.countRepeatedWord(lowerCase);
+
+    for (let key in str) {
+      if (str[key]) {
+        if (str[key] > str[key]) {
+          return key;
+        } else return key;
+      }
+    }
+    return str;
+  }
+
+  match(index1, index2) {
+    let str = [];
+    for (let i in index1)
+      index2.includes(index1[i]) ? str.push(index1[i]) : false;
+    return str;
+  }
+
+  commonCharactersInTwoString(string1, string2) {
+    let duplicateCharacter = "";
+    for (let i = 0; i < string1.length; i += 1) {
+      if (duplicateCharacter.indexOf(string1[i]) === -1) {
+        if (string2.indexOf(string1[i]) !== -1) {
+          duplicateCharacter += string1[i];
+        }
+      }
+    }
+    return [...duplicateCharacter];
   }
 }
 

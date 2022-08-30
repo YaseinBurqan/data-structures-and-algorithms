@@ -74,3 +74,5 @@ hash
 ![First Repeated Word](./images/firstRepeatedWord.jpg)
 
 ![hashmap left join](./images/hashmap-left-join.jpg)
+
+![Most Common Word](./images/commonWord.jpg)
