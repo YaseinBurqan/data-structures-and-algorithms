@@ -28,16 +28,26 @@ class LinkedList {
 
   append(value) {
     const node = new Node(value);
-    if (this.isEmpty()) {
+
+    if (!this.head) {
       this.head = node;
-    } else {
-      let curr = this.head;
-      while (curr.next) {
-        curr = curr.next;
-      }
-      curr.next = node;
+      return;
     }
-    this.size++;
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+    current.next = node;
+  }
+
+  values() {
+    let values = [];
+    let current = this.head;
+    while (current) {
+      values.push(current.value);
+      current = current.next;
+    }
+    return values;
   }
 
   removeFrom(index) {
