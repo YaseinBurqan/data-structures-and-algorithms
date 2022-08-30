@@ -72,3 +72,5 @@ hash
 ## [The Code](./hashTable.js)
 
 ![First Repeated Word](./images/firstRepeatedWord.jpg)
+
+![hashmap left join](./images/hashmap-left-join.jpg)
