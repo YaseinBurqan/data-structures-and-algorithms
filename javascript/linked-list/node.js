@@ -2,8 +2,8 @@
 // To represent each Node we have
 class Node {
   // each Node will have two things (value,next)
-  constructor(value, next = null) {
-    this.value = value;
+  constructor(head, next = null) {
+    this.head = head;
     this.next = next;
   }
 }
