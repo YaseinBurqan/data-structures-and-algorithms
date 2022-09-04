@@ -2,6 +2,7 @@ const HashTable = require("./hashTable");
 
 const hash = new HashTable();
 
-const str = "Taco cat ate a Taco taco";
+const str1 = "Taco cat ate a Taco taco";
 
-console.log(hash.mostCommonWord(str));
+
+console.log(hash.mostCommonWord(str1));
