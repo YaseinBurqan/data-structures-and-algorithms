@@ -51,6 +51,7 @@ class SinglyLinkedList {
     return current;
   }
 
+  // set
   updateValueAtIndex(index, value) {
     if (index < 0 || index >= this.length) return undefined;
     var counter = 0;
@@ -62,7 +63,7 @@ class SinglyLinkedList {
     current.head = value;
   }
 
-  updateValueOfHeadValue(oldValue, newValue) {
+  updateValueAtValue(oldValue, newValue) {
     if (!this.head) return undefined;
     var current = this.head;
     while (current.head !== oldValue) {
@@ -71,7 +72,7 @@ class SinglyLinkedList {
     current.head = newValue;
   }
 
-  // Insert first node (prepend)
+  // Insert first node (prepend)(unShift)
   insertFirst(value) {
     var newNode = new Node(value);
     if (!this.head) {
@@ -200,6 +201,7 @@ class SinglyLinkedList {
     console.log(counter);
   }
 
+  // (shift)
   removeFirstNode() {
     if (!this.head) return undefined;
     var currentHead = this.head;
@@ -341,7 +343,6 @@ class SinglyLinkedList {
     if (!this.head) console.log("List is empty");
     else {
       let current = this.head;
-
       // Initialize prev and current pointers
       // to reach middle of linked list
       var prevNode = current;
@@ -357,6 +358,21 @@ class SinglyLinkedList {
       prev.next = prevNode.next;
 
       return current;
+    }
+  }
+
+  removeDuplicates() {
+    let current = this.head;
+    const opj = {};
+    let unique = null;
+    while (current) {
+      if (opj[current.head]) {
+        unique.next = current.next;
+      } else {
+        opj[current.head] = true;
+        unique = current;
+      }
+      current = current.next;
     }
   }
 
@@ -386,21 +402,6 @@ class SinglyLinkedList {
     }
 
     return console.log(result);
-  }
-
-  removeDuplicates() {
-    let current = this.head;
-    if (current || !current.next) return current;
-
-    while (current && current.next) {
-      if (current.head === current.next.head) {
-        current.next = current.next.next;
-      } else {
-        current = current.next;
-      }
-    }
-
-    return current;
   }
 }
 

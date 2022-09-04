@@ -11,12 +11,7 @@ const ll = new SinglyLinkedList();
 ll.push(1);
 ll.push(2);
 ll.push(3);
-ll.push(4);
-ll.push(4);
-ll.push(5);
-ll.push(3);
-ll.push(5);
 
-ll.toString();
-ll.removeDuplicates();
-ll.toString();
+// ll.toString();
+ll.getDataFromEnd(1);
+// ll.toString();
