@@ -9,9 +9,9 @@ const SinglyLinkedList = require("./SinglyLinkedList");
 const ll = new SinglyLinkedList();
 
 ll.push(1);
-// ll.push(2);
-// ll.push(3);
+ll.push(2);
+ll.push(3);
+ll.insertAfter(3, 9);
 
-// ll.toString();
-ll.deleteMiddle();
-// ll.toString();
+ll.removeDuplicatesFromAllTheList();
+ll.toString();

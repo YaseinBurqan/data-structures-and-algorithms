@@ -364,19 +364,78 @@ class SinglyLinkedList {
     }
   }
 
-  removeDuplicates() {
+  removeDuplicatesFromAllTheList() {
     let current = this.head;
-    const opj = {};
-    let unique = null;
+    const arr = [];
+    let nextCurrent = null;
     while (current) {
-      if (opj[current.head]) {
-        unique.next = current.next;
+      if (!arr[current.head]) {
+        arr[current.head] = true;
+        nextCurrent = current;
       } else {
-        opj[current.head] = true;
-        unique = current;
+        nextCurrent.next = current.next;
       }
       current = current.next;
     }
+    return this.head;
+  }
+
+  removeDuplicatesOfTheNextValue() {
+    // sets current node to be head of list
+    let current = this.head;
+    // runs until we are at the end of the list
+    while (current !== null && current.next !== null) {
+      // checks to see if the current value and the next value are the same
+      if (current.head === current.next.head) {
+        // skips over the duplicate and the next value becomes 2x next
+        current.next = current.next.next;
+        // current value and the next value are not the same
+      } else {
+        // moves to the next node on the list to run through the while again
+        current = current.next;
+      }
+    }
+    // returns the linked list with no duplicates
+    return this.head;
+  }
+
+  isItSort() {
+    if (!this.head) {
+      console.log("List is empty");
+    } else if (this.head.next === null) {
+      console.log("contain One node");
+    }
+    let current = this.head;
+    let afterNode = current.next;
+    let opj = [];
+
+    while (current && current.next) {
+      if (current.head < afterNode.head) {
+        opj.push("true");
+        current = current.next;
+        afterNode = current.next;
+      } else {
+        opj.push("false");
+        current = current.next;
+        afterNode = current.next;
+      }
+    }
+    for (let i = 0; i < opj.length; i++) {
+      if (opj[i] === "false") {
+        // console.log("----");
+        console.log(false);
+        // console.log("-----");
+        break;
+      } else if (opj[i] === "true") {
+        console.log("-----");
+        console.log(true);
+        console.log("-----");
+        break;
+      }
+    }
+
+    console.log(opj);
+    // return result;
   }
 
   isPalindrome(list) {
