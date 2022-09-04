@@ -171,15 +171,16 @@ class SinglyLinkedList {
   }
 
   reverseList() {
-    let prev = null;
     let curr = this.head;
+    let previous = null;
     while (curr) {
       let next = curr.next;
-      curr.next = prev;
-      prev = curr;
+      curr.next = previous;
+      previous = curr;
       curr = next;
     }
-    this.head = prev;
+    this.head = previous;
+    return this.head;
   }
 
   getFirst() {
@@ -366,11 +367,11 @@ class SinglyLinkedList {
 
   removeDuplicatesFromAllTheList() {
     let current = this.head;
-    const arr = [];
     let nextCurrent = null;
+    const arr = [];
     while (current) {
       if (!arr[current.head]) {
-        arr[current.head] = true;
+        arr[current.head] = current.head;
         nextCurrent = current;
       } else {
         nextCurrent.next = current.next;

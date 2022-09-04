@@ -11,7 +11,10 @@ const ll = new SinglyLinkedList();
 ll.push(1);
 ll.push(2);
 ll.push(3);
-ll.insertAfter(3, 9);
+ll.push(2);
+ll.push(4);
+ll.push(5);
 
-ll.removeDuplicatesFromAllTheList();
+ll.toString();
+ll.reverseList();
 ll.toString();
