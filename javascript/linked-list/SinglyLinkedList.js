@@ -340,8 +340,11 @@ class SinglyLinkedList {
   }
 
   deleteMiddle() {
-    if (!this.head) console.log("List is empty");
-    else {
+    if (!this.head) {
+      console.log("List is empty");
+    } else if (this.head.next === null) {
+      console.log("contain One node");
+    } else {
       let current = this.head;
       // Initialize prev and current pointers
       // to reach middle of linked list
@@ -355,8 +358,8 @@ class SinglyLinkedList {
         prevNode = prevNode.next;
       }
       // Delete the middle node
+      console.log("deleted value  ", prev.next.head);
       prev.next = prevNode.next;
-
       return current;
     }
   }
