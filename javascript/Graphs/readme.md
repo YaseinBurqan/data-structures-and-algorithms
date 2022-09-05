@@ -72,6 +72,8 @@ display
 <!-- Description of each method publicly available to your Linked List -->
 - addVertex
 
+- addDirectedEdge
+
 - addEdge
 
 - removeVertex
