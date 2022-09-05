@@ -1,8 +1,8 @@
-const LinkedList = require("./linked-list-tail");
+const SinglyLinkedList = require("./SinglyLinkedList");
 
-class LinkedListQueue {
+class SinglyLinkedListQueue {
   constructor() {
-    this.list = new LinkedList();
+    this.list = new SinglyLinkedList();
   }
 
   enqueue(value) {
@@ -30,4 +30,4 @@ class LinkedListQueue {
   }
 }
 
-module.exports = LinkedListQueue;
+module.exports = SinglyLinkedListQueue;

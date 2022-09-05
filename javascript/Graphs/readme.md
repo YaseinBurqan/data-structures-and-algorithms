@@ -72,6 +72,8 @@ display
 <!-- Description of each method publicly available to your Linked List -->
 - addVertex
 
+- addDirectedEdge
+
 - addEdge
 
 - removeVertex
@@ -81,8 +83,6 @@ display
 - hasEdge
 
 - display
-
-## [The Code](./Graphs2.js)
 
 ## [The Code](./Graphs.js)
 

@@ -1,5 +1,5 @@
 /* eslint-disable quotes */
-/* eslint-disable new-cap */
+
 "use strict";
 class Node {
   constructor(value) {

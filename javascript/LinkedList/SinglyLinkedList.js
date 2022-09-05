@@ -3,8 +3,8 @@
 
 // Construct Single Node
 class Node {
-  constructor(head, next = null) {
-    this.head = head; // First element of the list.
+  constructor(value, next = null) {
+    this.value = value; // First element of the list.
     this.next = next; // Next element of the list.
     this.tail = null; // Last element of the list.
     this.size = 0;
@@ -19,8 +19,8 @@ class SinglyLinkedList {
   }
 
   // First in first out
-  push(val) {
-    var newNode = new Node(val);
+  push(value) {
+    var newNode = new Node(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
@@ -28,7 +28,7 @@ class SinglyLinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
-    this.length++;
+    this.size++;
     return this;
   }
 
@@ -43,8 +43,8 @@ class SinglyLinkedList {
     }
     this.tail = newTail;
     this.tail.next = null;
-    this.length--;
-    if (this.length === 0) {
+    this.size--;
+    if (this.size === 0) {
       this.head = null;
       this.tail = null;
     }
@@ -53,26 +53,26 @@ class SinglyLinkedList {
 
   // set
   updateValueAtIndex(index, value) {
-    if (index < 0 || index >= this.length) return undefined;
+    if (index < 0 || index >= this.size) return undefined;
     var counter = 0;
     var current = this.head;
     while (counter !== index) {
       current = current.next;
       counter++;
     }
-    current.head = value;
+    current.value = value;
   }
 
   updateValueAtValue(oldValue, newValue) {
     if (!this.head) return undefined;
     var current = this.head;
-    while (current.head !== oldValue) {
+    while (current.value !== oldValue) {
       current = current.next;
     }
-    current.head = newValue;
+    current.value = newValue;
   }
 
-  // Insert first node (prepend)(unShift)
+  // Insert first Node also called (prepend)(unShift)
   insertFirst(value) {
     var newNode = new Node(value);
     if (!this.head) {
@@ -81,11 +81,11 @@ class SinglyLinkedList {
     }
     newNode.next = this.head;
     this.head = newNode;
-    this.length++;
+    this.size++;
     return this;
   }
 
-  // Insert last node (append)
+  // Insert last Node also called Append
   insertLast(head) {
     let node = new Node(head);
     let current;
@@ -103,14 +103,14 @@ class SinglyLinkedList {
 
   // Get at index
   getAt(index) {
-    if (index < 0 || index >= this.length) return null;
+    if (index < 0 || index >= this.size) return null;
     var counter = 0;
     var current = this.head;
     while (counter !== index) {
       current = current.next;
       counter++;
     }
-    return console.log(current.head);
+    return console.log(current.value);
   }
 
   // Insert at index
@@ -118,7 +118,7 @@ class SinglyLinkedList {
     let node = new Node(value);
     if (this.head === null) {
       this.head = node;
-      this.length++;
+      this.size++;
       return this.head;
     }
     let iter = 1;
@@ -129,7 +129,7 @@ class SinglyLinkedList {
     }
     node.next = currNode.next;
     currNode.next = node;
-    this.length++;
+    this.size++;
     return node;
   }
 
@@ -165,7 +165,7 @@ class SinglyLinkedList {
   printList() {
     let current = this.head;
     while (current !== null) {
-      console.log(current.head);
+      console.log(current.value);
       current = current.next;
     }
   }
@@ -173,8 +173,9 @@ class SinglyLinkedList {
   reverseList() {
     let curr = this.head;
     let previous = null;
+    let next = null;
     while (curr) {
-      let next = curr.next;
+      next = curr.next;
       curr.next = previous;
       previous = curr;
       curr = next;
@@ -184,12 +185,22 @@ class SinglyLinkedList {
   }
 
   getFirst() {
-    console.log(this.head.head);
+    console.log(this.head.value);
   }
 
   getLast() {
-    this.reverseList();
-    console.log(this.head.head);
+    let curr = this.head;
+    let previous = null;
+    let next = null;
+    while (curr) {
+      next = curr.next;
+      curr.next = previous;
+      previous = curr;
+      curr = next;
+    }
+    this.head = previous;
+    console.log(this.head.value);
+    return this.head;
   }
 
   getSize() {
@@ -207,8 +218,8 @@ class SinglyLinkedList {
     if (!this.head) return undefined;
     var currentHead = this.head;
     this.head = currentHead.next;
-    this.length--;
-    if (this.length === 0) {
+    this.size--;
+    if (this.size === 0) {
       this.tail = null;
     }
     return currentHead;
@@ -232,7 +243,7 @@ class SinglyLinkedList {
     let current = this.head;
     let result = "";
     while (current !== null) {
-      result += `{ ${current.head} } -> `;
+      result += `{ ${current.value} } -> `;
       current = current.next;
     }
     return console.log(`{ ${result} } -> Null`);
@@ -242,7 +253,7 @@ class SinglyLinkedList {
     let isInclude = false;
     let current = this.head;
     while (current) {
-      if (current.head === value) {
+      if (current.value === value) {
         isInclude = true;
       }
       current = current.next;
@@ -254,12 +265,12 @@ class SinglyLinkedList {
     let current = this.head;
     const node = new Node(newValue);
 
-    if (current.head === value) {
+    if (current.value === value) {
       node.next = this.head;
       this.head = node;
     } else {
       while (current.next) {
-        if (current.next.head === value) {
+        if (current.next.value === value) {
           node.next = current.next;
           current.next = node;
           break;
@@ -273,7 +284,7 @@ class SinglyLinkedList {
     let current = this.head;
     const node = new Node(newValue);
     while (current) {
-      if (current.head === value) {
+      if (current.value === value) {
         node.next = current.next;
         current.next = node;
         break;
@@ -299,7 +310,7 @@ class SinglyLinkedList {
         current = current.next;
         length--;
       }
-      console.log(current.head);
+      console.log(current.value);
     }
   }
 
@@ -310,6 +321,7 @@ class SinglyLinkedList {
     console.log(zipTwoArray);
   }
 
+  // This method is meant to find where a given element is placed in our list.
   findIndexOf(value) {
     let nodeIndex = 0;
     let current = this.head;
@@ -331,7 +343,7 @@ class SinglyLinkedList {
       let current = this.head;
 
       while (current) {
-        arr.push(current.head);
+        arr.push(current.value);
         current = current.next;
       }
 
@@ -359,7 +371,7 @@ class SinglyLinkedList {
         prevNode = prevNode.next;
       }
       // Delete the middle node
-      console.log("deleted value  ", prev.next.head);
+      console.log("deleted value  ", prev.next.value);
       prev.next = prevNode.next;
       return current;
     }
@@ -370,8 +382,8 @@ class SinglyLinkedList {
     let nextCurrent = null;
     const arr = [];
     while (current) {
-      if (!arr[current.head]) {
-        arr[current.head] = current.head;
+      if (!arr[current.value]) {
+        arr[current.value] = current.value;
         nextCurrent = current;
       } else {
         nextCurrent.next = current.next;
@@ -387,7 +399,7 @@ class SinglyLinkedList {
     // runs until we are at the end of the list
     while (current !== null && current.next !== null) {
       // checks to see if the current value and the next value are the same
-      if (current.head === current.next.head) {
+      if (current.value === current.next.value) {
         // skips over the duplicate and the next value becomes 2x next
         current.next = current.next.next;
         // current value and the next value are not the same
@@ -400,72 +412,20 @@ class SinglyLinkedList {
     return this.head;
   }
 
-  isItSort() {
-    if (!this.head) {
-      console.log("List is empty");
-    } else if (this.head.next === null) {
-      console.log("contain One node");
+  reverse(head) {
+    let prev = null;
+    let next;
+    while (head) {
+      next = head.next;
+      head.next = prev;
+      prev = head;
+      head = next;
     }
-    let current = this.head;
-    let afterNode = current.next;
-    let opj = [];
-
-    while (current && current.next) {
-      if (current.head < afterNode.head) {
-        opj.push("true");
-        current = current.next;
-        afterNode = current.next;
-      } else {
-        opj.push("false");
-        current = current.next;
-        afterNode = current.next;
-      }
-    }
-    for (let i = 0; i < opj.length; i++) {
-      if (opj[i] === "false") {
-        // console.log("----");
-        console.log(false);
-        // console.log("-----");
-        break;
-      } else if (opj[i] === "true") {
-        console.log("-----");
-        console.log(true);
-        console.log("-----");
-        break;
-      }
-    }
-
-    console.log(opj);
-    // return result;
+    return prev;
   }
 
-  isPalindrome(list) {
-    let current1 = list.head;
-    let current2 = list.head;
-
-    let result;
-
-    let arr = [];
-    if (list !== null && list.next !== null) {
-      while (current1) {
-        arr.push(current1.head);
-        current1 = current1.next;
-      }
-      while (current2) {
-        let newVal = arr.pop();
-        if (newVal !== current2.head) {
-          result = false;
-          break;
-        }
-        current2 = current2.next;
-      }
-      result = true;
-    } else {
-      result = false;
-    }
-
-    return console.log(result);
-  }
+  // Linked List Is Palindrome
+  // isPalindrome(head) {}
 }
 
 module.exports = SinglyLinkedList;

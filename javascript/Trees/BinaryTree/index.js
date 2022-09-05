@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
-"use strict";
+("use strict");
 
-const Node = require("../node");
+const Node = require("./node");
 const BinaryTree = require("./BinaryTree");
 const BinaryTreeSearch = require("./BinarySearchTree");
 
