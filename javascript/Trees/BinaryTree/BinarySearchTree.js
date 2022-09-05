@@ -1,7 +1,7 @@
 /* eslint-disable quotes */
 "use strict";
 
-const Node = require("../node");
+const Node = require("./node");
 // const Queue = require("../../../stack-and-queue/stack_queue/src/queue");
 // const BinaryTree = require("./BinaryTree");
 

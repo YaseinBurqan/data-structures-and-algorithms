@@ -2,7 +2,7 @@
 "use strict";
 const Node = require("../node");
 const BinaryTree = require("../src/BinaryTree");
-const BinarySearchTree = require("../src/BinarySearchTree");
+const BinarySearchTree = require("../BinarySearchTree");
 
 let tree = null;
 

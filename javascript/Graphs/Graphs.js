@@ -26,6 +26,10 @@ class Graph {
     this.adjacencyList[vertex2].add(vertex1);
   }
 
+  addDirectedEdge(vertex1, vertex2) {
+    this.adjacencyList[vertex1].add(vertex2);
+  }
+
   removeVertex(vertex) {
     if (!this.adjacencyList[vertex]) {
       return undefined;
@@ -53,8 +57,8 @@ class Graph {
     if (!this.adjacencyList[vertex]) {
       console.log(`${vertex} : node does not exist`);
     }
-    console.log(`${vertex} : `);
-    return this.adjacencyList[vertex];
+    console.log(`${vertex} : Has Edge Of`);
+    return console.log(this.adjacencyList[vertex]);
   }
 
   display() {

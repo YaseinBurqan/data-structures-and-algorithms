@@ -84,8 +84,6 @@ display
 
 - display
 
-## [The Code](./Graphs2.js)
-
 ## [The Code](./Graphs.js)
 
 ![Graphs](./images/Graphs.jpg)

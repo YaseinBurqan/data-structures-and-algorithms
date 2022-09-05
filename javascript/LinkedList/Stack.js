@@ -1,8 +1,8 @@
-const LinkedList = require("./linked-list-tail");
+const SinglyLinkedList = require("./SinglyLinkedList");
 
-class LinkedListStack {
+class SinglyLinkedListStack {
   constructor() {
-    this.list = new LinkedList();
+    this.list = new SinglyLinkedList();
   }
 
   push(value) {
@@ -30,4 +30,4 @@ class LinkedListStack {
   }
 }
 
-module.exports = LinkedListStack;
+module.exports = SinglyLinkedListStack;

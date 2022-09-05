@@ -17,14 +17,8 @@ graph.display();
 
 console.log();
 
-console.log(graph.getEdge("Tokyo"));
-console.log(graph.getEdge("Dallas"));
-console.log(graph.getEdge("Aspen"));
-
-console.log();
-
-graph.hasEdge("Tokyo", "Dallas");
-
-console.log();
+graph.getEdge("Tokyo");
+graph.getEdge("Dallas");
+graph.getEdge("Aspen");
 
 graph.display();

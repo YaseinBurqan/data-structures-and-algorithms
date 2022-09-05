@@ -1,4 +1,4 @@
-const LinkedList = require("../linked-list/linkedList");
+const SinglyLinkedList = require("../linked-list/SinglyLinkedList");
 
 class HashTable {
   constructor(size) {
@@ -27,7 +27,7 @@ class HashTable {
   set(key, value) {
     let index = this.hash(key);
     if (!this.buckets[index]) {
-      this.buckets[index] = new LinkedList();
+      this.buckets[index] = new SinglyLinkedList();
     }
     this.buckets[index].append({ [key]: value });
     return index;
